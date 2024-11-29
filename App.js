@@ -355,6 +355,24 @@ const styles = StyleSheet.create({
     color: '#6A1B9A',
     textAlign: 'center', // Alinha o texto horizontalmente no centro
     width: '100%', // Garante que o texto ocupe toda a largura disponível
-  
+  }, // Missing closing bracket for dateText
+
+  timeButton: {
+    backgroundColor: '#7B1FA2',
+    padding: 15,
+    margin: 5,
+    borderRadius: 8,
+    width: '30%',
+    alignItems: 'center',
+  },
+  selectedTimeButton: {
+    backgroundColor: '#AB47BC',
+  },
+  timeText: {
+    color: '#fff',
+    fontSize: 16,
+  },
+  selectedTimeText: {
+    fontWeight: 'bold',
   },
 });
