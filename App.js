@@ -266,13 +266,13 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   timeButton: {
-    padding: 15,
+    backgroundColor: '#fff',
+    padding: 10,
+    borderRadius: 8,
+    margin: 5,
     borderWidth: 1,
     borderColor: '#6A1B9A',
-    borderRadius: 8,
-    marginBottom: 10,
     alignItems: 'center',
-    width: '30%', // Definindo largura de cada botão para caber 3 por linha
   },
   selectedTimeButton: {
     backgroundColor: '#6A1B9A',
@@ -293,46 +293,39 @@ const styles = StyleSheet.create({
   timesContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
+    marginBottom: 20,
   },
   tableContainer: {
     marginTop: 20,
   },
   tableTitle: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 10,
     textAlign: 'center',
   },
   tableHeader: {
     flexDirection: 'row',
-    borderBottomWidth: 1,
-    paddingBottom: 5,
-    marginBottom: 10,
+    justifyContent: 'space-around',
+    backgroundColor: '#6A1B9A',
+    padding: 10,
   },
   tableHeaderText: {
-    flex: 1,
+    color: '#fff',
     fontWeight: 'bold',
+    flex: 1,
     textAlign: 'center',
   },
   tableRow: {
     flexDirection: 'row',
-    paddingVertical: 10,
-    borderBottomWidth: 1,
+    justifyContent: 'space-around',
+    padding: 10,
   },
   tableRowText: {
     flex: 1,
     textAlign: 'center',
   },
-  title: {
-    fontSize: 35,  // Aumentando o tamanho da fonte
-    fontWeight: 'bold',
-    marginBottom: 25,
-    marginTop: 1,  // Ajuste para mover o texto para cima
-    textAlign: 'center',
-    color: '#6A1B9A',
-  },
-  
   dateContainer: {
     marginTop: 40, // Aumentei a margem superior aqui
     marginBottom: 20,
@@ -355,24 +348,6 @@ const styles = StyleSheet.create({
     color: '#6A1B9A',
     textAlign: 'center', // Alinha o texto horizontalmente no centro
     width: '100%', // Garante que o texto ocupe toda a largura disponível
-  }, // Missing closing bracket for dateText
-
-  timeButton: {
-    backgroundColor: '#7B1FA2',
-    padding: 15,
-    margin: 5,
-    borderRadius: 8,
-    width: '30%',
-    alignItems: 'center',
-  },
-  selectedTimeButton: {
-    backgroundColor: '#AB47BC',
-  },
-  timeText: {
-    color: '#fff',
-    fontSize: 16,
-  },
-  selectedTimeText: {
-    fontWeight: 'bold',
+  
   },
 });
