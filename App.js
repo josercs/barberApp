@@ -327,27 +327,20 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   dateContainer: {
-    marginTop: 40, // Aumentei a margem superior aqui
     marginBottom: 20,
-    padding: 15, // Adicionando padding para dar espaço interno
-    backgroundColor: '#fff', // Fundo branco para destacar a borda
-    borderColor: '#6A1B9A', // Cor da borda
-    borderWidth: 2, // Espessura da borda
-    borderRadius: 16, // Bordas arredondadas
-    alignItems: 'center', // Centraliza horizontalmente
-    justifyContent: 'center', // Centraliza verticalmente
-    flexDirection: 'row', // Assegura que o conteúdo será alinhado de forma flexível
-    textAlign: 'center', // Centraliza o texto dentro do container
-  
-  
-    
   },
   dateText: {
+<<<<<<< HEAD
     fontSize: 18,
     fontWeight: 'bold',
     color: '#6A1B9A',
     textAlign: 'center', // Alinha o texto horizontalmente no centro
     width: '100%', // Garante que o texto ocupe toda a largura disponível
   
+=======
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: 'center',
+>>>>>>> 7299fc15846bbe427e9a3b05945863953f0d5a73
   },
 });
