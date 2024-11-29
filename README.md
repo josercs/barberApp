@@ -87,6 +87,7 @@ Instale a extensão Prettier no VSCode para formatar o código automaticamente.
 
 
 Passo a Passo para Usar o Expo Go para Simular o App
+
 1. Instalar o Expo CLI
 Se você ainda não instalou o Expo CLI, instale-o globalmente usando o npm:
 
