@@ -80,129 +80,129 @@ export default function App() {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <StatusBar barStyle="dark-content" /> {/* Controla a cor da barra de status */}
-
-      <View style={styles.container}>
-        {screen === 'Home' && (
-          <>
-            <Text style={styles.title}>Bem-vindo à Barbearia Valente!</Text>
-            <TextInput
-              style={styles.input}
-              placeholder="Seu nome"
-              value={userName}
-              onChangeText={setUserName}
-            />
-            <TextInput
-              style={styles.input}
-              placeholder="Serviço desejado (ex: Corte de cabelo)"
-              value={service}
-              onChangeText={setService}
-            />
-            <TouchableOpacity style={styles.button} onPress={handleNext}>
-              <Text style={styles.buttonText}>Próximo</Text>
-            </TouchableOpacity>
-          </>
-        )}
-
-        {screen === 'Provider' && (
-          <>
-            <Text style={styles.title}>Escolha o prestador:</Text>
-            <View style={styles.providersContainer}>
-              {providers.map((item) => (
-                <TouchableOpacity
-                  key={item}
-                  style={[styles.providerButton, provider === item && styles.selectedProviderButton]}
-                  onPress={() => setProvider(item)}
-                >
-                  <FontAwesome
-                    name={item === 'Leon Valente' ? 'user' : 'user-circle'} // Ícones diferentes para cada prestador
-                    size={30}
-                    color={provider === item ? '#fff' : '#6A1B9A'}
-                  />
-                  <Text
-                    style={[styles.providerText, provider === item && styles.selectedProviderText]}
-                  >
-                    {item}
-                  </Text>
-                </TouchableOpacity>
-              ))}
-            </View>
-            <TouchableOpacity style={styles.button} onPress={handleNext}>
-              <Text style={styles.buttonText}>Próximo</Text>
-            </TouchableOpacity>
-          </>
-        )}
-
-        {screen === 'Schedule' && (
-          <>
-            <Animated.View style={[styles.dateContainer, { opacity: fadeAnim }]}>
-              <Text style={styles.dateText}>{currentDate}</Text>
-            </Animated.View>
-
-            <Text style={styles.title}>Escolha o horário:</Text>
-            <View style={styles.timesContainer}>
-              {times.map((item) => (
-                <TouchableOpacity
-                  key={item}
-                  style={[
-                    styles.timeButton,
-                    selectedTime === item && styles.selectedTimeButton,
-                    reservedTimes.includes(item) && styles.reservedTimeButton,
-                  ]}
-                  onPress={() => {
-                    if (reservedTimes.includes(item)) {
-                      Alert.alert('Erro', 'Este horário já está reservado!');
-                      return;
-                    }
-                    setSelectedTime(item);
-                  }}
-                  disabled={reservedTimes.includes(item)}
-                >
-                  <Text
-                    style={[
-                      styles.timeText,
-                      selectedTime === item && styles.selectedTimeText,
-                      reservedTimes.includes(item) && styles.reservedTimeText,
-                    ]}
-                  >
-                    {item}
-                  </Text>
-                </TouchableOpacity>
-              ))}
-            </View>
-            <TouchableOpacity style={styles.button} onPress={handleSchedule}>
-              <Text style={styles.buttonText}>Confirmar</Text>
-            </TouchableOpacity>
-
-            {scheduledData.length > 0 && (
-              <View style={styles.tableContainer}>
-                <Text style={styles.tableTitle}>Agendamentos Confirmados</Text>
-                <FlatList
-                  data={scheduledData}
-                  keyExtractor={(item, index) => index.toString()}
-                  renderItem={({ item }) => (
-                    <View style={styles.tableRow}>
-                      <Text style={styles.tableRowText}>{item.name}</Text>
-                      <Text style={styles.tableRowText}>{item.service}</Text>
-                      <Text style={styles.tableRowText}>{item.provider}</Text>
-                      <Text style={styles.tableRowText}>{item.time}</Text>
-                    </View>
-                  )}
-                  ListHeaderComponent={() => (
-                    <View style={styles.tableHeader}>
-                      <Text style={styles.tableHeaderText}>Nome</Text>
-                      <Text style={styles.tableHeaderText}>Serviço</Text>
-                      <Text style={styles.tableHeaderText}>Prestador</Text>
-                      <Text style={styles.tableHeaderText}>Horário</Text>
-                    </View>
-                  )}
+    <StatusBar barStyle="dark-content" /> {/* Controla a cor da barra de status */}
+  
+    <View style={styles.container}>
+      {screen === 'Home' && (
+        <>
+          <Text style={styles.title}>Bem-vindo à Barbearia Valente!</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Seu nome"
+            value={userName}
+            onChangeText={setUserName}
+          />
+          <TextInput
+            style={styles.input}
+            placeholder="Serviço desejado (ex: Corte de cabelo)"
+            value={service}
+            onChangeText={setService}
+          />
+          <TouchableOpacity style={styles.button} onPress={handleNext}>
+            <Text style={styles.buttonText}>Próximo</Text>
+          </TouchableOpacity>
+        </>
+      )}
+  
+      {screen === 'Provider' && (
+        <>
+          <Text style={styles.title}>Escolha o prestador:</Text>
+          <View style={styles.providersContainer}>
+            {providers.map((item) => (
+              <TouchableOpacity
+                key={item}
+                style={[styles.providerButton, provider === item && styles.selectedProviderButton]}
+                onPress={() => setProvider(item)}
+              >
+                <FontAwesome
+                  name={item === 'Leon Valente' ? 'user' : 'user-circle'} // Ícones diferentes para cada prestador
+                  size={30}
+                  color={provider === item ? '#fff' : '#6A1B9A'}
                 />
-              </View>
-            )}
-          </>
-        )}
-      </View>
-    </SafeAreaView>
+                <Text
+                  style={[styles.providerText, provider === item && styles.selectedProviderText]}
+                >
+                  {item}
+                </Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+          <TouchableOpacity style={styles.button} onPress={handleNext}>
+            <Text style={styles.buttonText}>Próximo</Text>
+          </TouchableOpacity>
+        </>
+      )}
+  
+      {screen === 'Schedule' && (
+        <>
+          <Animated.View style={[styles.dateContainer, { opacity: fadeAnim }]}>
+            <Text style={styles.dateText}>{currentDate}</Text>
+          </Animated.View>
+  
+          <Text style={styles.title}>Escolha o horário:</Text>
+          <View style={styles.timesContainer}>
+            {times.map((item) => (
+              <TouchableOpacity
+                key={item}
+                style={[
+                  styles.timeButton,
+                  selectedTime === item && styles.selectedTimeButton,
+                  reservedTimes.includes(item) && styles.reservedTimeButton,
+                ]}
+                onPress={() => {
+                  if (reservedTimes.includes(item)) {
+                    Alert.alert('Erro', 'Este horário já está reservado!');
+                    return;
+                  }
+                  setSelectedTime(item);
+                }}
+                disabled={reservedTimes.includes(item)}
+              >
+                <Text
+                  style={[
+                    styles.timeText,
+                    selectedTime === item && styles.selectedTimeText,
+                    reservedTimes.includes(item) && styles.reservedTimeText,
+                  ]}
+                >
+                  {item}
+                </Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+          <TouchableOpacity style={styles.button} onPress={handleSchedule}>
+            <Text style={styles.buttonText}>Confirmar</Text>
+          </TouchableOpacity>
+  
+          {scheduledData.length > 0 && (
+            <View style={styles.tableContainer}>
+              <Text style={styles.tableTitle}>Agendamentos Confirmados</Text>
+              <FlatList
+                data={scheduledData}
+                keyExtractor={(item, index) => index.toString()}
+                renderItem={({ item }) => (
+                  <View style={styles.tableRow}>
+                    <Text style={styles.tableRowText}>{item.name}</Text>
+                    <Text style={styles.tableRowText}>{item.service}</Text>
+                    <Text style={styles.tableRowText}>{item.provider}</Text>
+                    <Text style={styles.tableRowText}>{item.time}</Text>
+                  </View>
+                )}
+                ListHeaderComponent={() => (
+                  <View style={styles.tableHeader}>
+                    <Text style={styles.tableHeaderText}>Nome</Text>
+                    <Text style={styles.tableHeaderText}>Serviço</Text>
+                    <Text style={styles.tableHeaderText}>Prestador</Text>
+                    <Text style={styles.tableHeaderText}>Horário</Text>
+                  </View>
+                )}
+              />
+            </View>
+          )}
+        </>
+      )}
+    </View>
+  </SafeAreaView>
   );
 }
 
@@ -327,20 +327,23 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   dateContainer: {
+    marginTop: 40, // Aumentei a margem superior aqui
     marginBottom: 20,
+    padding: 15, // Adicionando padding para dar espaço interno
+    backgroundColor: '#fff', // Fundo branco para destacar a borda
+    borderColor: '#6A1B9A', // Cor da borda
+    borderWidth: 2, // Espessura da borda
+    borderRadius: 16, // Bordas arredondadas
+    alignItems: 'center', // Centraliza horizontalmente
+    justifyContent: 'center', // Centraliza verticalmente
+    flexDirection: 'row', // Assegura que o conteúdo será alinhado de forma flexível
+    textAlign: 'center', // Centraliza o texto dentro do container
   },
   dateText: {
-<<<<<<< HEAD
     fontSize: 18,
     fontWeight: 'bold',
     color: '#6A1B9A',
     textAlign: 'center', // Alinha o texto horizontalmente no centro
     width: '100%', // Garante que o texto ocupe toda a largura disponível
-  
-=======
-    fontSize: 16,
-    fontWeight: 'bold',
-    textAlign: 'center',
->>>>>>> 7299fc15846bbe427e9a3b05945863953f0d5a73
   },
 });
